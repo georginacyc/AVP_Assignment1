@@ -15,13 +15,12 @@ namespace PokeSim {
     {
         public Pikachu(string name) : base(name) {}
         public void Runaway() {
-            Console.Write($"{this.Name} is running away!");
+            Console.Write($"{this.Name} is running away!\n");
         }
         public void Thunderbolt(Pokemon target) {
-            Console.Write("Pikaaachuuu");
-            int hp;
-            hp = target.Hp - 10;
-            if (hp < 0) {
+            Console.Write("Pikaaachuuu\n");
+            target.Hp = target.Hp - 10;
+            if (target.Hp < 0) {
                 target.Hp = 0;
             }
             this.Exp = this.Exp + 10;
@@ -29,9 +28,9 @@ namespace PokeSim {
         public override void Evolve()
         {
             if (this.Exp >= 20) {
-                Console.Write($"{this.Name} has evolved into Raichu!");
+                Console.Write($"{this.Name} has evolved into Raichu!\n");
             } else {
-                Console.Write($"{this.Name} is trying to evolve into Raichu");
+                Console.Write($"{this.Name} is trying to evolve into Raichu.\n");
             }
         }
     }
@@ -39,7 +38,7 @@ namespace PokeSim {
     {
         public Eevee(string name) : base(name) {}
         public void Runaway() {
-            Console.Write($"{this.Name} is running away!");
+            Console.Write($"{this.Name} tries to exit the battle.\n");
         }
         public override void Evolve() 
         {
@@ -49,7 +48,7 @@ namespace PokeSim {
             int r = random.Next(0, 7);
             string evolved_form = forms[r];
 
-            Console.Write($"{this.Name} is evolving into {evolved_form}");
+            Console.Write($"{this.Name} is evolving into {evolved_form}!\n");
         }
     }
 }

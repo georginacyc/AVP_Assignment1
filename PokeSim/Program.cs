@@ -43,7 +43,7 @@ namespace PokeSim
         {
             Console.WriteLine("Welcome to PokeSim!");
             // uncomment the following for testing
-            /*
+            
             var pikachu = new Pikachu("Pikachu");
             var eevee = new Eevee("Eevee");
 
@@ -55,7 +55,7 @@ namespace PokeSim
             pokemons.Add(eevee);
 
             foreach (var pokemon in pokemons) {
-                Console.WriteLine($"Name:{pokemon.Name},HP:{pokemon.HP},Exp:{pokemon.Exp}");
+                Console.WriteLine($"Name:{pokemon.Name},HP:{pokemon.Hp},Exp:{pokemon.Exp}");
                 pokemon.Evolve();
             }
 
@@ -65,7 +65,7 @@ namespace PokeSim
             foreach (var normal in normals) {
                 normal.Runaway();
             }
-            */
+            
         }
     }
 }
