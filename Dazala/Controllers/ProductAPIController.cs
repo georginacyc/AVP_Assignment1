@@ -35,7 +35,21 @@ namespace Dazala.Controllers {
         public IEnumerable<Product> Post([FromBody] ProductPOCO value) 
         {
             // TODO: Fix me
-            List<Product> products = new List<Product>(); 
+            var productPOCO = value;
+            List<Product> x = this._context.Product
+                                            .ToList();
+            var product = new Product
+                {   
+                    Id = x.Count + 1,
+                    Name = productPOCO.Name,
+                    Description = productPOCO.Description,
+                    Price = productPOCO.Price
+                };
+                this._context.Product.Add(product);
+                this._context.SaveChanges();
+                List<Product> products = this._context.Product
+                                            .Where(p => p.Id == product.Id)
+                                            .ToList();
             return products;
         }
 
@@ -44,7 +58,7 @@ namespace Dazala.Controllers {
         public IEnumerable<Product> Get()
         {
             // TODO: Fix me
-            List<Product> products = new List<Product>(); 
+            List<Product> products = this._context.Product.ToList(); 
             return products;
         }
 
@@ -53,7 +67,9 @@ namespace Dazala.Controllers {
         public IEnumerable<Product> Get(int id)
         {            
             // TODO: Fix me
-            List<Product> products = new List<Product>(); 
+            List<Product> products = _context.Product
+                                        .Where(p => p.Id == id)
+                                        .ToList();
             return products;
         }
     }
