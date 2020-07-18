@@ -36,11 +36,8 @@ namespace Dazala.Controllers {
         {
             // TODO: Fix me
             var productPOCO = value;
-            List<Product> x = this._context.Product
-                                            .ToList();
             var product = new Product
                 {   
-                    Id = x.Count + 1,
                     Name = productPOCO.Name,
                     Description = productPOCO.Description,
                     Price = productPOCO.Price
