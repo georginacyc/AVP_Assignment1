@@ -43,7 +43,7 @@ namespace PokeSim {
         public override void Evolve() 
         {
             // var evolved_form = new List<string> {"Vaporeon", "Leafeon", "Espeon", "Umbreon", "Sylveon", " Flareon", "Jolteon"};
-            string [] forms = {"Vaporeon", "Leafeon", "Espeon", "Umbreon", "Sylveon", " Flareon", "Jolteon"};
+            string [] forms = {"Vaporeon", "Leafeon", "Espeon", "Umbreon", "Sylveon", "Flareon", "Jolteon"};
             Random random = new Random();
             int r = random.Next(0, 7);
             string evolved_form = forms[r];
